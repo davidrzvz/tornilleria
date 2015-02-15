@@ -1,0 +1,10 @@
+descargar:mysql-connector-c-noinstall-6.0.2-win32
+y descomprimir en C:\
+gem --version
+https://github.com/rubygems/rubygems/releases/tag/v2.2.3
+gem install --local C:\rubygems-update-1.8.30.gem
+update_rubygems --no-ri --no-rdoc
+gem uninstall rubygems-update -x
+rails new tornilleria -d mysql
+cd tornilleria
+gem install mysql2 -- --with-mysql-lib=C:\mysql32\lib --with-mysql-include=C:\mysql32\include
