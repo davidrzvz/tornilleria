@@ -1,25 +1,34 @@
-<%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+<div class="row">
+  <div class="col s6 offset-s3">
+    <%= form_for(@user) do |f| %>
+      <% if @user.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-      <ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+          <ul>
+          <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :nombre %><br>
-    <%= f.text_field :nombre %>
+      <div class="input-field">
+        <%= f.text_field :nombre , class: "validate"%>
+        <%= f.label :nombre, for: "user_nombre" %>
+      </div>
+      <div class="input-field">
+        <%= f.number_field :edad , class: "validate"%>
+        <%= f.label :edad %>
+      </div>
+      <div class="actions">
+        <!-- <%= f.submit class: "btn" %>-->
+        <% if @user.nombre == nil %>
+          <button type="submit" class="waves-effect waves-light btn">Crear Usuario</button>
+        <% else %>
+          <button type="submit" class="waves-effect waves-light btn">Update Usuario</button>
+        <% end %>
+      </div>
+    <% end %>
   </div>
-  <div class="field">
-    <%= f.label :edad %><br>
-    <%= f.number_field :edad %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>
