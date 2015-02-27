@@ -6,7 +6,9 @@
 </div>
 <script type="text/javascript">
 $(document).ready(function(){
-	$('#new_user').addClass('hidden');	
+	$('#new_user').submit(function(e){
+		e.preventDefault();
+	});	
 });
 
 </script>

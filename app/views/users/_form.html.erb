@@ -21,6 +21,10 @@
         <%= f.number_field :edad , class: "validate"%>
         <%= f.label :edad %>
       </div>
+      <div class="input-field">
+        <input type="text" class="datepicker" id="birthdate">
+        <label for="birthdate" class="">Birthdate</label>
+      </div>
       <div class="actions">
         <!-- <%= f.submit class: "btn" %>-->
         <% if @user.nombre == nil %>
@@ -32,3 +36,9 @@
     <% end %>
   </div>
 </div>
+<script type="text/javascript">
+$('.datepicker').pickadate({
+    selectMonths: false, // Creates a dropdown to control month
+    selectYears: 10 // Creates a dropdown of 15 years to control year
+  });
+</script>
