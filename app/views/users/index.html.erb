@@ -16,9 +16,9 @@
             <tr>
               <td><%= user.nombre %></td>
               <td><%= user.edad %></td>
-              <td><%= link_to 'Ver', user , class: "btn waves-effect waves-light blue lighten-1" %></td>
-              <td><%= link_to 'Editar', edit_user_path(user) , class: "btn waves-effect waves-light" %></td>
-              <td><%= link_to 'Eliminar', user, method: :delete, data: { confirm: 'Are you sure?' } , class: "btn waves-effect waves-light red darken-1" %></td>
+              <td><%= link_to 'Ver', user , class: "btn waves-effect waves-light blue lighten-1 btn-small" %></td>
+              <td><%= link_to 'Editar', edit_user_path(user) , class: "btn waves-effect waves-light btn-small" %></td>
+              <td><%= link_to 'Eliminar', user, method: :delete, data: { confirm: 'Are you sure?' } , class: "btn waves-effect waves-light red darken-1 btn-small" %></td>
             </tr>
           <% end %>
         </tbody>
