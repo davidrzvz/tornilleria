@@ -35,12 +35,12 @@ GEM
     coffee-script (2.3.0)
       coffee-script-source
       execjs
-    coffee-script-source (1.9.0)
+    coffee-script-source (1.9.1)
     erubis (2.7.0)
     execjs (2.3.0)
     hike (1.2.3)
     i18n (0.7.0)
-    jbuilder (2.2.7)
+    jbuilder (2.2.8)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
     jquery-rails (3.1.2)
@@ -52,7 +52,7 @@ GEM
     mime-types (2.4.3)
     minitest (5.5.1)
     multi_json (1.10.1)
-    mysql2 (0.3.17)
+    mysql2 (0.3.18-x86-mingw32)
     rack (1.5.2)
     rack-test (0.6.3)
       rack (>= 1.0)
