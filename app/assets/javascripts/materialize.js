@@ -5612,21 +5612,21 @@ DatePicker.defaults = (function( prefix ) {
 
         // The title label to use for the dropdown selectors
         labelMonthSelect: 'Select a month',
-        labelYearSelect: 'Select a year',
+        labelYearSelect: 'selecciona un año',
 
         // Months and weekdays
         monthsFull: [ 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre' ],
         monthsShort: [ 'Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic' ],
-        weekdaysFull: [ 'Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado' ],
+        weekdaysFull: [ 'Domingo', 'Lunes', 'Martes', 'Míercoles', 'Jueves', 'Viernes', 'Sábado' ],
         weekdaysShort: [ 'Dom', 'Lun', 'Mar', 'Mier', 'Jue', 'Vier', 'Sab' ],
 
         // Materialize modified
         weekdaysLetter: [ 'D', 'L', 'M', 'M', 'J', 'V', 'S' ],
 
         // Today and clear
-        today: 'Today',
-        clear: 'Clear',
-        close: 'Close',
+        today: 'Hoy',
+        clear: 'Limpiar',
+        close: 'Cerrar',
 
         // The format to show on the `input` element
         format: 'dd, mmmm, yyyy',
