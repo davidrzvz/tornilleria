@@ -8,7 +8,7 @@
 $(document).ready(function(){
 	$('#new_user').bootstrapValidator({
 	    fields: {
-	        nombre: {
+	        "user[nombre]": {
 	            validators: {
 	                notEmpty: {
 	                },
@@ -17,7 +17,7 @@ $(document).ready(function(){
 	                }
 	            }
 	        },
-	        edad: {
+	        "user[edad]": {
 	            validators: {
 	                integer: {
 	                },
@@ -39,7 +39,7 @@ $(document).ready(function(){
 	    }
 	})
 	.on('success.form.bv', function(e) {
-	  e.preventDefault(); 
+	  //e.preventDefault(); 
 	});
     $('#birthdate').change(function(){
     	$('#new_user').bootstrapValidator('revalidateField', 'birthdate');
