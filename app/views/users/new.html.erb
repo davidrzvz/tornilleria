@@ -6,9 +6,44 @@
 </div>
 <script type="text/javascript">
 $(document).ready(function(){
-	$('#new_user').submit(function(e){
-		e.preventDefault();
-	});	
+	$('#new_user').bootstrapValidator({
+	    fields: {
+	        nombre: {
+	            validators: {
+	                notEmpty: {
+	                },
+	                stringLength:{
+	                  max: 45,
+	                }
+	            }
+	        },
+	        edad: {
+	            validators: {
+	                integer: {
+	                },
+	                notEmpty: {
+	                },
+	                stringLength:{
+	                  max: 5,
+	                }
+	            }
+	        },
+	        birthdate: {
+                validators: {
+                    notEmpty: {},
+                    date: {
+                        format: 'DD/MM/YYYY',
+                    }
+                }
+		    },
+	    }
+	})
+	.on('success.form.bv', function(e) {
+	  e.preventDefault(); 
+	});
+    $('#birthdate').change(function(){
+    	$('#new_user').bootstrapValidator('revalidateField', 'birthdate');
+    });
 });
 
 </script>

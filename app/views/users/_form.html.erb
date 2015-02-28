@@ -14,15 +14,15 @@
       <% end %>
 
       <div class="input-field">
-        <%= f.text_field :nombre , class: "validate"%>
+        <%= f.text_field :nombre, name:"nombre" , class: ""%>
         <%= f.label :nombre, for: "user_nombre" %>
       </div>
       <div class="input-field">
-        <%= f.number_field :edad , class: "validate"%>
+        <%= f.text_field :edad , name:"edad", class: ""%>
         <%= f.label :edad %>
       </div>
       <div class="input-field">
-        <input type="text" class="datepicker" id="birthdate">
+        <input type="text" class="datepicker" id="birthdate" name="birthdate">
         <label for="birthdate" class="">Birthdate</label>
       </div>
       <div class="actions">
@@ -37,6 +37,9 @@
   </div>
 </div>
 <script type="text/javascript">
+$(document).ready(function(){
+
+});
 $('.datepicker').pickadate({
     selectMonths: false, // Creates a dropdown to control month
     selectYears: 10 // Creates a dropdown of 15 years to control year

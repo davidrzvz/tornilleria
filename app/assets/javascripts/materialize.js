@@ -2268,24 +2268,24 @@ $(document).ready(function(){
     });
 
     validate_field = function(object) {
-      if (object.val().length === 0) {
-        if (object.hasClass('validate')) {
-          object.removeClass('valid');
-          object.removeClass('invalid');
-        }
-      }
-      else {
-        if (object.hasClass('validate')) {
-          if (object.is(':valid')) {
-            object.removeClass('invalid');
-            object.addClass('valid');
-          }
-          else {
-            object.removeClass('valid');
-            object.addClass('invalid');
-          }
-        }
-      }
+      // if (object.val().length === 0) {
+      //   if (object.hasClass('validate')) {
+      //     object.removeClass('valid');
+      //     //object.removeClass('invalid');
+      //   }
+      // }
+      // else {
+      //   if (object.hasClass('validate')) {
+      //     if (object.is(':valid')) {
+      //       object.removeClass('invalid');
+      //       object.addClass('valid');
+      //     }
+      //     else {
+      //       object.removeClass('valid');
+      //       object.addClass('invalid');
+      //     }
+      //   }
+      // }
     }
 
 
@@ -5629,7 +5629,7 @@ DatePicker.defaults = (function( prefix ) {
         close: 'Cerrar',
 
         // The format to show on the `input` element
-        format: 'dd, mmmm, yyyy',
+        format: 'dd/mm/yyyy',
 
         // Classes
         klass: {
