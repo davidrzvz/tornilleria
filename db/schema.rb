@@ -11,13 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150215061815) do
+ActiveRecord::Schema.define(version: 20150228184658) do
 
   create_table "users", force: true do |t|
     t.string   "nombre"
-    t.integer  "edad"
+    t.date     "birthdate"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "apellido_paterno"
+    t.string   "apellido_materno"
   end
 
 end

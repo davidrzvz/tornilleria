@@ -9,6 +9,15 @@
 <body>
 
 <%= yield %>
-
+<script type="text/javascript">
+$(document).ready(function(){
+  Waves.displayEffect();
+  $('input[type=text]').each(function(index, element) {
+    if($(element).val().length > 0) {
+      $(this).siblings('label, i').addClass('active');
+    }
+  });
+});
+</script>
 </body>
 </html>

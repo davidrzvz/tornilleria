@@ -1,9 +1,9 @@
 <div class="row">
-  <div class="col s6 offset-s3">
+  <div class="col s8 offset-s2">
     <%= form_for(@user) do |f| %>
       <% if @user.errors.any? %>
         <div id="error_explanation">
-          <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+          <h2><%= pluralize(@user.errors.count, "error", "errores") %> usuario no guardado:</h2>
 
           <ul>
           <% @user.errors.full_messages.each do |message| %>
@@ -12,18 +12,27 @@
           </ul>
         </div>
       <% end %>
-
-      <div class="input-field">
-        <%= f.text_field :nombre %>
-        <%= f.label :nombre %>
+      <div class="row">
+        <div class="input-field col s4">
+          <i class="mdi-action-account-circle prefix"></i>
+          <%= f.text_field :nombre %>
+          <%= f.label :nombre %>
+        </div>
+        <div class="input-field col s4">
+          <%= f.text_field :apellido_paterno %>
+          <%= f.label :apellido_paterno %>
+        </div>
+        <div class="input-field col s4">
+          <%= f.text_field :apellido_materno %>
+          <%= f.label :apellido_materno %>
+        </div>
       </div>
-      <div class="input-field">
-        <%= f.text_field :edad %>
-        <%= f.label :edad %>
-      </div>
-      <div class="input-field">
-        <input type="text" class="datepicker" id="birthdate" name="birthdate">
-        <label for="birthdate" class="">Birthdate</label>
+      <div class="row">
+        <div class="input-field col s8">
+          <i class="mdi-action-today prefix"></i>
+          <%= f.text_field :birthdate, class: "datepicker" %>
+          <%= f.label :birthdate %>
+        </div>
       </div>
       <div class="actions">
         <!-- <%= f.submit class: "btn" %>-->
@@ -38,10 +47,54 @@
 </div>
 <script type="text/javascript">
 $(document).ready(function(){
-
-});
-$('.datepicker').pickadate({
+  $('#new_user,#edit_user_<%= @user.id %>').bootstrapValidator({
+      fields: {
+          "user[nombre]": {
+              validators: {
+                  notEmpty: {
+                  },
+                  stringLength:{
+                    max: 45,
+                  }
+              }
+          },
+          "user[apellido_paterno]": {
+              validators: {
+                  notEmpty: {
+                  },
+                  stringLength:{
+                    max: 45,
+                  }
+              }
+          },
+          "user[apellido_materno]": {
+              validators: {
+                  notEmpty: {
+                  },
+                  stringLength:{
+                    max: 45,
+                  }
+              }
+          },
+          "user[birthdate]": {
+                validators: {
+                    notEmpty: {},
+                    date: {
+                        format: 'YYYY-MM-DD',
+                    }
+                }
+        },
+      }
+  })
+  .on('success.form.bv', function(e) {
+    //e.preventDefault(); 
+  });
+    $('.datepicker').change(function(){
+      $('#new_user,#edit_user_<%= @user.id %>').bootstrapValidator('revalidateField', 'user[birthdate]');
+    });
+    $('.datepicker').pickadate({
     selectMonths: false, // Creates a dropdown to control month
     selectYears: 10 // Creates a dropdown of 15 years to control year
   });
+});
 </script>
