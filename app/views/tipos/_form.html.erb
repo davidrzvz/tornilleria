@@ -1,0 +1,47 @@
+<div class="row">
+  <div class="col s8 offset-s2">
+    <%= form_for(@tipo) do |f| %>
+      <% if @tipo.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@tipo.errors.count, "error") %> prohibited this tipo from being saved:</h2>
+
+          <ul>
+          <% @tipo.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class="row">
+        <div class="input-field col s6">
+          <%= f.label :nombre %><br>
+          <%= f.text_field :nombre %>
+        </div>
+      </div>
+      <div class="actions">
+        <% if @tipo.nombre == nil %>
+          <button type="submit" class="waves-effect waves-light btn">Crear Tipo</button>
+        <% else %>
+          <button type="submit" class="waves-effect waves-light btn">Update Tipo</button>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+  $('#new_tipo,#edit_tipo_<%= @tipo.id %>').bootstrapValidator({
+      fields: {
+          "tipo[nombre]": {
+              validators: {
+                  notEmpty: {
+                  },
+                  stringLength:{
+                    max: 45,
+                  }
+              }
+          },
+      }
+  });
+});
+</script>

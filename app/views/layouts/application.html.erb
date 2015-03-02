@@ -12,6 +12,7 @@
 <script type="text/javascript">
 $(document).ready(function(){
   Waves.displayEffect();
+  $('select').material_select();
   $('input[type=text]').each(function(index, element) {
     if($(element).val().length > 0) {
       $(this).siblings('label, i').addClass('active');

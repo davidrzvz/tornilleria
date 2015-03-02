@@ -6,3 +6,5 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 User.create(nombre: "omar",birthdate: "1991-09-14",apellido_paterno: "ruiz",apellido_materno: "meza")
+Tipo.create(nombre: "Equipo de seguridad")
+Producto.create(nombre: "Goggles ventilación",:descripcion: "Goggles con ventilación por canal de URREA",:modelo: "UR-gv",tipo_id: 1)
