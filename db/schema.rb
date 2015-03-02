@@ -13,12 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20150302052719) do
 
-  create_table "categoria", force: true do |t|
-    t.string   "nombre"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "productos", force: true do |t|
     t.string   "nombre"
     t.string   "descripcion"
